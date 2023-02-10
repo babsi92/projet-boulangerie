@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie de poduits
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+		<h1 class="display-6 mb-4">Explorez les différentes catégories de nos produits</h1>
+	</div>
+
+	<div class="categories">
+
+		<div class="card" style="width: 18rem;">
+			<img src="{{asset('../images/patisseries.jpg')}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="{{path('categories_produits_show',{type: 'patisserie'})}}" class="btn btn-primary">PÂTISSERIES</a>
+			</div>
+		</div>
+
+		<div class="card" style="width: 18rem;">
+			<img src="{{asset('../images/viennoiseries.jpg')}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="{{path('categories_produits_show',{type: 'viennoiseries'})}}" class="btn btn-primary">VIENNOISERIES</a>
+			</div>
+		</div>
+
+		<div class="card" style="width: 18rem;">
+			<img src="{{asset('../images/pains.jpg')}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="{{path('categories_produits_show',{type: 'pains'})}}" class="btn btn-primary">PAINS</a>
+			</div>
+		</div>
+
+		<div class="card" style="width: 18rem;">
+			<img src="{{asset('../images/sandwichs.jpg')}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="{{path('categories_produits_show',{type: 'sandwichs'})}}" class="btn btn-primary">SANDWICHS</a>
+			</div>
+		</div>
+
+		<div class="card" style="width: 18rem;">
+			<img src="{{asset('../images/boissons.jpg')}}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="{{path('categories_produits_show',{type: 'boissons'})}}" class="btn btn-primary">BOISSONS</a>
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

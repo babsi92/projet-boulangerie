@@ -1,0 +1,30 @@
+<nav>
+	<div class="logo">
+		<img id="logo" src="../../images/logo2.jpg"/>
+	</div>
+
+	<div class="liens">
+		<a href="{{ path('index') }}">Accueil</a>
+		<a href="{{ path('maison') }}">Maison</a>
+		<a href="{{ path('categories_show') }}">Produits</a>
+	
+	{% if app.user %}
+		<a href="{{ path('app_user_panier') }}">Mon panier</a>
+	{% endif %}
+	<a href="{{path('contact')}}">Contact</a>
+
+	</div>
+	<div class="burger"></div>
+</nav>
+<div class="liens_mobile">
+	<a href="{{ path('index') }}">Accueil</a>
+		<a href="{{ path('maison') }}">Maison</a>
+		<a href="{{ path('categories_show') }}">Produits</a>
+	
+	{% if app.user %}
+		<a href="{{ path('app_user_panier') }}">Mon panier</a>
+	{% endif %}
+	<a href="{{path('contact')}}">Contact</a>
+
+
+</div>

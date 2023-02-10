@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+
+{# titre 
+	 <h3>{{produit.type}}</h3> #}
+ <h3>{{produit.type}}</h3> #}
+
+{# <div class="categories">
+
+{% for produit in produits %}
+
+<div class="card" style="width: 18rem;">
+  <img src="{{asset('../images/produit.image')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{produit.nom}}</h5>
+    <p class="card-text">{{produit.description}}</p>
+    <a href="{{ path('add_produit_to_panier', {id_produit: produit.id} ) }}" class="btn btn-primary">Ajouter au panier</a>
+  </div>
+</div>
+
+{% endfor %}
+
+</div> #}
+
+
+	{# <div class="categories">
+	
+			{% for produit in produits %}
+	
+				<div class="card" style="width: 18rem;">
+					<img src="{{asset('../images/produit.image')}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{produit.nom}}</h5>
+						<p class="card-text">{{produit.description}}</p>
+						<a href="#" class="btn btn-primary">Ajouter au panier</a>
+					</div>
+				</div>
+	
+			{% endfor %} #}
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block title %}Catégorie de poduits
+{% endblock %}
+
+
+{% block body %}
+	<div class="container p-5">
+		<table class="table align-middle mb-0 bg-white">
+			<thead class="bg-light">
+				<tr>
+					<th>Image</th>
+					<th>Titre</th>
+					<th>Type</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for produit in produits %}
+
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								{% if produit.imageName %}
+									{# <img class="card-img-top" src="images/produits/{{ produit.imageName }}" alt="..." /> #}
+									<img style="width: 45px; height: 45px" class="rounded-circle" src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="..."/>
+								{% else %}
+									<img style="width: 45px; height: 45px" class="rounded-circle" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+								{% endif %}
+
+								<div class="ms-3">
+									<p class="fw-bold mb-1">{{produit.nom}}</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<p class="fw-normal mb-1">{{produit.description}}</p>
+
+							{# <p class="text-muted mb-0">IT department</p> #}
+						</td>
+						<td>
+							<div class="rounded-pill d-inline">{{produit.Type}}</div>
+						</td>
+						<td>
+							{# <a href="{{ path('app_produits_show', {'id': produit.id}) }}">show</a> #}
+							<a href="{{ path('app_produits_edit', {'id': produit.id}) }}">edit</a>
+							<form method="post" action="{{ path('app_produits_delete', {'id': produit.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ produit.id) }}">
+								<button class="btn">Delete</button>
+							</form>
+
+						</td>
+					</tr>
+
+
+				{% else %}
+					<tr>
+						<td colspan="7">no records found</td>
+					</tr>
+				{% endfor %}
+
+
+			</tbody>
+			<a href="{{ path('app_produits_new') }}">Ajouter Produits</a>
+
+		</table>
+	</div>
+
+
+{% endblock %}

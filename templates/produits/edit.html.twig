@@ -1,0 +1,17 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Edit Produits
+{% endblock %}
+
+{% block body %}
+	<div class="container p-5">
+
+		<h1>Produits Ajoutés </h1>
+
+		{{ include('produits/_form.html.twig', {'button_label': 'Mise à jour'}) }}
+
+		<a href="{{ path('app_produits_index') }}">Tous les produits</a>
+
+	</div>
+
+{% endblock %}
